@@ -1,59 +1,43 @@
 ---
 ---
 
-$blue: #0076FF;
-
-$grid-gutter-width: 1.5rem;
-$grid-columns: 12;
-
-// Grid system
-//
-// Generate semantic grid columns with these mixins.
-
-// Centered container element
-@mixin make-container($gutter: $grid-gutter-width)
-{
-  margin-right: auto;
-  margin-left: auto;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-}
-
-// Creates a wrapper for a series of columns
-@mixin make-row($gutter: $grid-gutter-width)
-{
-  margin-left:  ($gutter / -2);
-  margin-right: ($gutter / -2);
-}
-
-@mixin make-col($gutter: $grid-gutter-width)
-{
-  position: relative;
-  float: left;
-  min-height: 1px;
-  padding-left:  ($gutter / 2);
-  padding-right: ($gutter / 2);
-}
-
-@mixin make-col-span($columns)
-{
-  width: percentage(($columns / $grid-columns));
-}
-@mixin make-col-offset($columns)
-{
-  margin-left: percentage(($columns / $grid-columns));
-}
-@mixin make-col-push($columns)
-{
-  left: percentage(($columns / $grid-columns));
-}
-@mixin make-col-pull($columns)
-{
-  right: percentage(($columns / $grid-columns));
-}
+$blue: #E0823F;
 
 body {
+  font-family: "ff-tisa-web-pro", serif;
+}
+
+body, .container {
   position: relative;
+}
+
+h1, h2, h3, h4, h5, nav {
+  font-family: "proxima-nova", sans-serif;
+}
+
+h1 {
+  color: $blue;
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 100;
+  strong {
+    font-weight: 900;
+  }
+}
+
+h2 {
+    font-size: 3.5rem;
+    line-height: .9;
+    font-weight: 900;
+}
+
+.lead {
+  font-style: italic;
+  color: $blue;
+  font-weight: 800;
+  font-family: "ff-tisa-web-pro", serif;
+  font-size: 1.25rem;
+  padding-top: 1rem;
 }
 
 .nav-pills .nav-link.active {
@@ -65,7 +49,7 @@ body {
 }
 
 #navigation {
-    position: fixed; top:0; right: -240px;
+    position: fixed; top:0; right: -241px;
     background: #eee;
     z-index: 100;
     height: 100vh;
@@ -75,32 +59,35 @@ body {
     }
     &:hover {
         position: fixed; top:0; right: 0;
+        box-shadow: -10px 0 25px rgba(0,0,0,.25);
     }
-    box-shadow: -10px 0 25px rgba(0,0,0,.25);
 }
 
 a[href="#navigation"] {
     position: fixed; top: 15px; right: 15px;
     color: #fff;
-    background-color: $blue;
+    background-color: #104EF4;
     line-height: 25px;
     width: 25px;
     text-align: center;
+    z-index: 100;
 }
 
 img {
     max-width: 100%;
 }
 
-h2 {
-    color: $blue;
+figcaption {
+  font-style: italic;
 }
 
 nav {
     font-size: 16px!important;
 
-    .header {
+    .header a {
         margin-top: 45px!important;
+        color: $blue;
+        font-weight: 900!important;
     }
 
     h4 {
@@ -120,24 +107,36 @@ nav {
 
 }
 section {
-    min-height: 100vh;
-    padding: 30px auto!important;
+    min-height: 50vh;
+    padding: 30px 0;
+    margin-bottom: 30px;
     header.section {
-        height: 100vh;
         background: $blue;
+        padding: 30vh 0 30px 0;
+        margin-top: -31px;
+        margin-bottom: 30px;
+        vertical-align: bottom;
+        position: relative;
         h2 {
             color: #fff;
-            small {
-                color: #000;   
-            }
+        }
+        h3, small {
+            color: darken($blue,25%);
         }
     }
     &#home {
-        figure, img {
-            width: 100%;
-        }
+      padding: 0!important;
+      figure, img {
+          width: 100%;
+      }
     }
-    &#what {
+    &#read {
+      padding-top: 0;
+      nav {
+        padding: 0;
+      }
+    }
+    &#an-icon-is-a-verb {
       #googft-mapCanvas {
         height: 300px;
         margin: 0;
