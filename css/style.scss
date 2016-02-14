@@ -32,9 +32,14 @@ h1 {
 }
 
 h2 {
-    font-size: 3.5rem;
-    line-height: .9;
-    font-weight: 900;
+  font-size: 3.5rem;
+  line-height: .9;
+  font-weight: 900;
+}
+
+h3 {
+  color: $blue;
+  font-weight: 700;
 }
 
 .lead {
@@ -138,7 +143,6 @@ nav {
 
 
 section {
-//    min-height: 50vh;
     padding: 30px 0;
     margin-bottom: 30px;
     header.section {
@@ -153,9 +157,16 @@ section {
             em {
               font-weight: 100;
             }
+          @include media-breakpoint-up(md) {
+              font-size: 4rem;
+          }
+          @include media-breakpoint-up(lg) {
+              font-size: 4.5rem;
+          }
         }
         h3, small {
             color: darken($blue,25%);
+            font-weight: 100;
         }
         a:link,
         a:visited {
@@ -212,6 +223,46 @@ section {
       @include media-breakpoint-up(lg) {
         p {
           font-size: 1.25rem;
+        }
+      }
+    }
+    &#notes-on-design-activism {
+      .row {
+       padding: 0 15px;
+      }
+      h3 {
+        margin-top: 30px;
+        line-height: 1.25;
+        font-size: 1.5rem;
+        @include make-col-span(12);
+
+        @include media-breakpoint-up(md) {
+          @include make-col-span(9);
+        }
+        @include media-breakpoint-up(lg) {
+          @include make-col-span(7);
+          font-size: 2rem;
+          margin-top: 60px;
+        }
+      }
+      h3:first-child {
+        margin-top: 0;
+      }
+      p {
+        @include make-col-span(12);
+
+        @include media-breakpoint-up(md) {
+          @include make-col-span(9);
+          @include make-col-offset(3);
+        }
+        @include media-breakpoint-up(lg) {
+          font-size: 1.25rem;
+          @include make-col-span(7);
+        }
+      }
+      header.section {
+        h3 {
+          margin: 0;
         }
       }
     }
