@@ -13,9 +13,11 @@ body, .container {
   position: relative;
 }
 
-a:link, a:visited {
-  color: #000;
-  text-decoration: underline;
+p {
+  a:link, a:visited {
+    color: #000;
+    text-decoration: underline;
+  }
 }
 
 .container-fluid {
