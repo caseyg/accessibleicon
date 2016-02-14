@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "bootstrap";
+@import "bootstrap-flex";
 
 $blue: #E0823F;
 
@@ -127,7 +127,6 @@ nav {
         text-decoration: none!important;
       }
     }
-
 }
 
 @include media-breakpoint-up(xs) { }
@@ -191,11 +190,19 @@ section {
       }
     }
     &#an-icon-is-a-verb {
+      margin-bottom: 0;
+      padding-bottom: 0;
       header.section {
         background-image: url("/img/an-icon-is-a-verb.jpg");
         background-size: cover;
         background-position: bottom center;
         background-repeat: no-repeat;
+      }
+      @include media-breakpoint-up(md) {
+        .row {
+          margin-bottom: 60px;
+          align-items: center;
+        }
       }
     }
     &#contribute {
