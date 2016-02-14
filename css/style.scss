@@ -13,6 +13,11 @@ body, .container {
   position: relative;
 }
 
+a:link, a:visited {
+  color: #000;
+  text-decoration: underline;
+}
+
 .container-fluid {
   padding: 0;
   & > .row {
@@ -75,6 +80,7 @@ a#hamburger {
   width: 25px;
   text-align: center;
   z-index: 100;
+  text-decoration: none;
 }
 
 img {
@@ -104,14 +110,20 @@ nav {
         font-weight: bold;
     }
 
-    a  {
-        color: #000;
+    a:link, a:visited {
+      color: #000;
+      text-decoration: none;
+      small {
+          color: gray;
+          display: block;
+      }
+    }
 
-        small {
-            color: gray;
-            display: block;
-        }
-
+    a:hover, a:active {
+      text-decoration: underline!important;
+      small {
+        text-decoration: none!important;
+      }
     }
 
 }
