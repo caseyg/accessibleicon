@@ -7,6 +7,7 @@ $blue: #E0823F;
 
 body {
   font-family: "ff-tisa-web-pro", serif;
+  padding: 0;
 }
 
 p {
@@ -282,6 +283,9 @@ section {
     &#buy {
       img {
         margin-bottom: 10px;
+      }
+      .row {
+        margin-bottom: 15px;
       }
     }
 }
