@@ -1,6 +1,8 @@
 ---
 ---
 
+@import "bootstrap";
+
 $blue: #E0823F;
 
 body {
@@ -11,8 +13,20 @@ body, .container {
   position: relative;
 }
 
+.container-fluid {
+  padding: 0;
+  & > .row {
+    padding: 0;
+  }
+}
+
 h1, h2, h3, h4, h5, nav {
   font-family: "proxima-nova", sans-serif;
+}
+
+#sidebar {
+  max-height: 100vh;
+  overflow-y: scroll;
 }
 
 h1 {
@@ -38,6 +52,10 @@ h2 {
   font-family: "ff-tisa-web-pro", serif;
   font-size: 1.25rem;
   padding-top: 1rem;
+  a:link, a:visited {
+    color: #222;
+    text-decoration: underline;
+  }
 }
 
 .nav-pills .nav-link.active {
@@ -48,29 +66,15 @@ h2 {
     padding-left: 11px;
 }
 
-#navigation {
-    position: fixed; top:0; right: -241px;
-    background: #eee;
-    z-index: 100;
-    height: 100vh;
-    overflow-x: scroll;
-    svg {
-        width: 50px;
-    }
-    &:hover {
-        position: fixed; top:0; right: 0;
-        box-shadow: -10px 0 25px rgba(0,0,0,.25);
-    }
-}
-
-a[href="#navigation"] {
-    position: fixed; top: 15px; right: 15px;
-    color: #fff;
-    background-color: #104EF4;
-    line-height: 25px;
-    width: 25px;
-    text-align: center;
-    z-index: 100;
+a#hamburger {
+  display: block!important;
+  position: fixed; top: 15px; right: 15px;
+  color: #fff;
+  background-color: #104EF4;
+  line-height: 25px;
+  width: 25px;
+  text-align: center;
+  z-index: 100;
 }
 
 img {
@@ -83,6 +87,10 @@ figcaption {
 
 nav {
     font-size: 16px!important;
+  
+    svg {
+      max-width: 50px;
+    }
 
     .header a {
         margin-top: 45px!important;
@@ -106,46 +114,93 @@ nav {
     }
 
 }
+
+@include media-breakpoint-up(xs) { }
+@include media-breakpoint-up(sm) { }
+@include media-breakpoint-up(md) { }
+@include media-breakpoint-up(lg) { }
+@include media-breakpoint-up(xl) { }
+
+
 section {
-    min-height: 50vh;
+//    min-height: 50vh;
     padding: 30px 0;
     margin-bottom: 30px;
     header.section {
         background: $blue;
-        padding: 30vh 0 30px 0;
+        padding: 40vh 0 15px 0;
         margin-top: -31px;
         margin-bottom: 30px;
         vertical-align: bottom;
         position: relative;
         h2 {
             color: #fff;
+            em {
+              font-weight: 100;
+            }
         }
         h3, small {
             color: darken($blue,25%);
         }
+        a:link,
+        a:visited {
+          text-decoration: none;
+          color: #fff;
+        }
     }
-    &#home {
-      padding: 0!important;
+    &#home, &#end {
+      padding: 0;
+      min-height: 0;
+      margin-bottom: 0;
       figure, img {
           width: 100%;
+          margin: 0;
+          padding: 0;
       }
     }
     &#read {
-      padding-top: 0;
-      nav {
-        padding: 0;
+      padding-top: 30px;
+      min-height: 0;
+      .lead {
+        color: #222;
+        font-weight: 100;
+        margin-bottom: 45px;
+      }
+      @include media-breakpoint-up(lg) {
+        h1 {
+          font-size: 4rem;
+        }
+        .lead {
+          font-size: 1.75rem;
+          font-weight: 100;
+        }
       }
     }
     &#an-icon-is-a-verb {
-      #googft-mapCanvas {
-        height: 300px;
-        margin: 0;
-        padding: 0;
-        width: 100%;
+      header.section {
+        background-image: url("/img/an-icon-is-a-verb.jpg");
+        background-size: cover;
+        background-position: bottom center;
+        background-repeat: no-repeat;
       }
     }
     &#contribute {
 
     }
-    &#notes {}
+    &#notes {
+
+    }
+    &#use {
+      .row > div {
+        margin-bottom: 30px;
+      }
+      a.btn {
+        margin-top: 10px;
+      }
+    }
+    &#buy {
+      img {
+        margin-bottom: 10px;
+      }
+    }
 }
