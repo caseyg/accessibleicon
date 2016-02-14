@@ -31,13 +31,13 @@
       <a href="#navigation" id="hamburger" title="Navigation Menu" aria-label="navigation menu" style="display:none;">&#x2630;</a>
       <section id="home">
         <figure class="figure">
-          <a href="#read"><img src="/img/cover-sticker.jpg" class="figure-img img-fluid" alt="This header photo shows the earliest street-art version of the icon: a clear-backed sticker with an orange and red wheelchair-riding icon, superimposed over a blue and white standard icon. Old and new together."></a>
+          <a href="#read"><img src="/img/cover-sticker-sm.jpg" srcset="/img/cover-sticker-md.jpg 768w, /img/cover-sticker.jpg 992w" class="figure-img img-fluid" alt="This header photo shows the earliest street-art version of the icon: a clear-backed sticker with an orange and red wheelchair-riding icon, superimposed over a blue and white standard icon. Old and new together."></a>
         </figure>
       </section>
       <div class="container">
         <section id="read">
           <div class="row">
-            <header class="col-xs-12">
+            <header class="col-xs-12 col-md-10 col-md-offset-1">
               <h1 class="text-xs-center">The<br> <strong>Accessible Icon</strong><br> Project</h1>
               <p class="lead">The Accessible Icon Project is an ongoing work of <a href="#notes-on-design-activism">design activism</a>. It starts with a graphic icon, <a href="#use">free for use</a> in the public domain, and continues its work as a collaboration among people with disabilities and their allies <a href="#an-icon-is-a-verb">toward a more accessible world</a>.</p>
             </header>
@@ -406,7 +406,7 @@
     </main>
     <section id="end">
       <figure>
-        <a href="#home"><img src="/img/cover-stencil.jpg" class="figure-img img-fluid" alt=""></a>
+        <a href="#home"><img src="/img/cover-stencil-sm.jpg" srcset="/img/cover-stencil-md.jpg 768w, /img/cover-stencil.jpg 992w"  class="figure-img img-fluid" alt=""></a>
       </figure>
     </section>
     <!-- jQuery first, then Bootstrap JS. -->
@@ -414,23 +414,6 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js" integrity="sha384-vZ2WRJMwsjRMW/8U7i6PWi6AlO1L79snBrmgiDpgIWJ82z8eA5lenwvxbMV1PAh7" crossorigin="anonymous"></script>
     <script src="https://use.typekit.net/uvr3imz.js"></script>
     <script>try{Typekit.load({ async: true });}catch(e){}</script>
-<!--     <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=916679131703388";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
-    <script> 
-    var $buoop = {c:2}; 
-    function $buo_f(){ 
-     var e = document.createElement("script"); 
-     e.src = "//browser-update.org/update.min.js"; 
-     document.body.appendChild(e);
-    };
-    try {document.addEventListener("DOMContentLoaded", $buo_f,false)}
-    catch(e){window.attachEvent("onload", $buo_f)}
-    </script> 
- -->  </body>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+  </body>
 </html>
