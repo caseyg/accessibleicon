@@ -86,6 +86,7 @@ figcaption {
 }
 
 nav {
+    padding-top: 45px;
     font-size: 16px!important;
   
     svg {
@@ -164,7 +165,6 @@ section {
       .lead {
         color: #222;
         font-weight: 100;
-        margin-bottom: 45px;
       }
       @include media-breakpoint-up(lg) {
         h1 {
